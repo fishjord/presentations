@@ -1,7 +1,7 @@
 # Regular Expressions
 
 ## Introduction
-Regular expressions are a powerful way (read: [language](http://en.wikipedia.org/wiki/Regular_language)) to express text patterns.  The goal of this presentation is to give you a high level knowledge about what regular expressions are, why they're useful, and ways to make use of them from the command line.  However with great power...Regular expresions can be very useful, but also very difficult to interpret.
+Regular expressions are a powerful way (read: [language](http://en.wikipedia.org/wiki/Regular_language)) to express text patterns.  The goal of this presentation is to give you a high level knowledge about what regular expressions are, why they're useful, and ways to make use of them from the command line.  However with great power...Regular expressions can be very useful, but also very difficult to interpret.
 
 We'll be working with some example data related to the nirK gene, a set of [annotations](nirk_annotations.txt) and [sequences](nirk_seqs.fa) from the [FunGene Repository](http://fungene.cme.msu.edu).
 
@@ -38,7 +38,7 @@ Regular expressions are a string of characters that define a pattern.  These cha
 * Literals: most any character (abc, 123)
 * Meta-characters
   * . -- Matches any literal
-  * $, ^ -- begining of line, end of line
+  * $, ^ -- beginning of line, end of line
   * <, > -- beginning of word, end of word
   * \w \W \s \S \d -- letter, not a letter, whitespace, not whitespace, digit
 * Operators
@@ -47,6 +47,14 @@ Regular expressions are a string of characters that define a pattern.  These cha
   * [] -- Set of literals
   * () -- Groupings
   * \ -- Allows a meta-character or operator to be used as a literal
+
+### Example Regular Expressions
+
+* colou?r -- Matches the two variations of spelling the word 'color'
+* gr[ae]y -- Matches the two variations of the spelling of the color 'gray'
+* (\d\d\d) ?\d\d\d-\d\d\d\d -- Telephone
+* [a-z]+\d -- Lower case letters followed by a number (walla2)
+* \d*\w\d -- 0 or more numbers followed by a single letter followed by a single number (ex: 9251a5)
 
 ## Working with regular expressions
 
@@ -84,17 +92,24 @@ Suppose we wanted to check and see how many of our nirK sequences came from the 
 egrep -c Azospirillum nirk_annotations.txt 
 ```
 
-That's all well and good, but what if we're interested in the species as well?
+We can use an exact text pattern for the word Azospirillum.
+
+Now suppose instead we wanted to see the genus and species name for all sequences from the genus Azospirillum.
 
 ``` bash
 egrep -o 'Azospirillum [a-z\.]+' nirk_annotations.txt
 ```
+
+We know that a species name is always the genus followed by a space followed by the species epithet.
+
 
 But wait, some lines contain strain information as well...
 
 ``` bash
 egrep -o 'Azospirillum [a-z\.]+ [a-zA-Z0-9]+' nirk_annotations.txt
 ```
+
+or
 
 ``` bash
 egrep -o 'Azospirillum [a-z\.]+( [^       ]+)?' nirk_annotations.txt
