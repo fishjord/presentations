@@ -56,6 +56,7 @@ We'll be working with egrep as an easy way of exploring the power of regular exp
 
 Suppose we have a primer, aaccacaa*y*ctgatcgaggc, and we want to find all the matching regions in our set of nirk sequences.  (Note: the IUPAC ambiguity codon Y can be either C or T).  The most straight forward way of doing this would be exact matching of the two possible strings:
 > aaccacaacctgatcgaggc
+
 > aaccacaatctgatcgaggc
 
 which we could do with
