@@ -11,42 +11,42 @@ Commonly abbreviated as regex, regexp, re.
 
 ### A few common applications
 * Input validation
-** Phone numbers
-** Email
+  * Phone numbers
+  * Email
 * Text parsing
-** area code from a phone number [ex: (xxx) xxx-xxxx]
-** Dates [ex: xx/xx/xxxx, xx-xx-xxx]
-** Quick and dirty html parsing
+  * area code from a phone number [ex: (xxx) xxx-xxxx]
+  * Dates [ex: xx/xx/xxxx, xx-xx-xxx]
+  * Quick and dirty html parsing
 * Bioinformatics
-** Motif searching
-** Primer matching
+  * Motif searching
+  * Primer matching
 
 ### Where you can use regular expressions
 * Most programming languages have built in support
-** Perl
-** Python
-** Java
-** ...etc etc
+  * Perl
+  * Python
+  * Java
+  * ...etc etc
 * Many common command line tools
-** grep
-** sed
-** awk
+  * grep
+  * sed
+  * awk
 
 ## Structure of a regular expression
 
 Regular expressions are a string of characters that define a pattern.  These characters can be
 * Literals: most any character (abc, 123)
 * Meta-characters
-** . -- Matches any literal
-** $, ^ -- begining of line, end of line
-** <, > -- beginning of word, end of word
-** \w \W \s \S \d -- letter, not a letter, whitespace, not whitespace, digit
+  * . -- Matches any literal
+  * $, ^ -- begining of line, end of line
+  * <, > -- beginning of word, end of word
+  * \w \W \s \S \d -- letter, not a letter, whitespace, not whitespace, digit
 * Operators
-** ? -- preceding literal is optional
-** *, + -- match the preceding literal 0/1 or more times
-** [] -- Set of literals
-** () -- Groupings
-** \ -- Allows a meta-character or operator to be used as a literal
+  * ? -- preceding literal is optional
+  * *, + -- match the preceding literal 0/1 or more times
+  * [] -- Set of literals
+  * () -- Groupings
+  * \ -- Allows a meta-character or operator to be used as a literal
 
 ## Working with regular expressions
 
