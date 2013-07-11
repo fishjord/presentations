@@ -123,3 +123,14 @@ The annotation dataset was actually made using regular expressions as well, the 
 grep '>' fungene_7.3_nirK_7643_unaligned_nucleotide_seqs.fa | sed 's/>//g' | tr ',' '\t' | sed -E 's/[^a-zA-Z0-9][^=]+=([^      $]+)/   \1/g' > nirk_annotations.txt
 ```
 
+# Resources
+
+SWC http://software-carpentry.org/4_0/regexp/index.html
+
+Python regular expression documentation http://docs.python.org/2/library/re.html
+  - Good quick reference for regular expressions along with the python api documentation
+
+Wikipedia regex page http://en.wikipedia.org/wiki/Regular_expression
+  - Rather dense...but good examples
+
+Cheatsheet http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/
